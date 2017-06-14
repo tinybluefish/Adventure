@@ -1,0 +1,11 @@
+c:\dev\git\Adventure\Adventure\Adventure\bin\Debug\Adventure.exe.config
+C:\dev\git\Adventure\Adventure\bin\Debug\Adventure.exe.config
+C:\dev\git\Adventure\Adventure\bin\Debug\Adventure.exe
+C:\dev\git\Adventure\Adventure\bin\Debug\Adventure.pdb
+C:\dev\git\Adventure\Adventure\obj\Debug\Adventure.csprojResolveAssemblyReference.cache
+C:\dev\git\Adventure\Adventure\obj\Debug\Adventure.Properties.Resources.resources
+C:\dev\git\Adventure\Adventure\obj\Debug\Adventure.csproj.GenerateResource.Cache
+C:\dev\git\Adventure\Adventure\obj\Debug\Adventure.exe
+C:\dev\git\Adventure\Adventure\obj\Debug\Adventure.pdb
+C:\dev\git\Adventure\Adventure\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\dev\git\Adventure\Adventure\obj\Debug\Adventure.Display.resources

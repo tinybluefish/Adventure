@@ -1,0 +1,1 @@
+C:\dev\git\Adventure\AdventureTest\obj\Debug\AdventureTest.csprojResolveAssemblyReference.cache
