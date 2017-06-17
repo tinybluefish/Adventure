@@ -1,4 +1,6 @@
-﻿namespace Adventure
+﻿using System.Windows.Forms;
+
+namespace Adventure
 {
     enum EquipmentType
     {
@@ -15,13 +17,13 @@
     {
         public readonly string Name;
         public readonly EquipmentType Type;
-        public readonly string ImageFileName;
+        public readonly PictureBox Sprite;
 
-        public Equipment(string name, EquipmentType type, string imageFile)
+        public Equipment(string name, EquipmentType type, PictureBox sprite)
         {
             this.Name = name;
             this.Type = type;
-            this.ImageFileName = imageFile;
+            this.Sprite = sprite;
         }
 
     }

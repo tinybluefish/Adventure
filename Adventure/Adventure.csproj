@@ -61,6 +61,7 @@
     <Compile Include="Tests\GameTests.cs" />
     <Compile Include="Equipment.cs" />
     <Compile Include="Monster.cs" />
+    <Compile Include="Level.cs" />
     <Compile Include="Weapon.cs" />
     <EmbeddedResource Include="Display.resx">
       <DependentUpon>Display.cs</DependentUpon>

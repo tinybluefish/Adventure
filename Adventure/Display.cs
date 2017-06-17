@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -69,7 +70,13 @@ namespace Adventure
 
             sprite.Location = new Point(x, y);
 
+            sprite.Refresh();
             return sprite.Location;
+        }
+
+        internal void RenderLevel(Level l1)
+        {
+            throw new NotImplementedException();
         }
 
         private void moveUp(object sender, EventArgs e)
@@ -92,10 +99,10 @@ namespace Adventure
             MoveSprite(playerSprite, Direction.RIGHT);
         }
 
-        private void Display_KeyDown(object sender, KeyEventArgs e)
-        {
-            MessageBox.Show("Pressed: {}", e.KeyCode.ToString());
-        }
+        //private void Display_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    MessageBox.Show("Pressed: {}", e.KeyCode.ToString());
+        //}
 
         private void Display_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {

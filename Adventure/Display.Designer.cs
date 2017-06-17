@@ -47,16 +47,6 @@
             this.bombSprite = new System.Windows.Forms.PictureBox();
             this.bluePotionSprite = new System.Windows.Forms.PictureBox();
             this.redPotionSprite = new System.Windows.Forms.PictureBox();
-            this.moveBox = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.attackBox = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.batSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wizardSprite)).BeginInit();
@@ -77,8 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bombSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bluePotionSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redPotionSprite)).BeginInit();
-            this.moveBox.SuspendLayout();
-            this.attackBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // batSprite
@@ -303,142 +291,6 @@
             this.redPotionSprite.TabStop = false;
             this.redPotionSprite.Visible = false;
             // 
-            // moveBox
-            // 
-            this.moveBox.Controls.Add(this.button3);
-            this.moveBox.Controls.Add(this.button2);
-            this.moveBox.Controls.Add(this.button1);
-            this.moveBox.Controls.Add(this.button4);
-            this.moveBox.Font = new System.Drawing.Font("Impact", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moveBox.Location = new System.Drawing.Point(1045, 842);
-            this.moveBox.Name = "moveBox";
-            this.moveBox.Size = new System.Drawing.Size(200, 150);
-            this.moveBox.TabIndex = 19;
-            this.moveBox.TabStop = false;
-            this.moveBox.Text = "Move";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(21, 38);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(61, 61);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "◄";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.moveLeft);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(122, 38);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(61, 61);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "►";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.moveRight);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(82, 71);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 49);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "▼";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.moveDown);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(82, 23);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(40, 49);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "▲";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.moveUp);
-            // 
-            // attackBox
-            // 
-            this.attackBox.Controls.Add(this.button5);
-            this.attackBox.Controls.Add(this.button6);
-            this.attackBox.Controls.Add(this.button7);
-            this.attackBox.Controls.Add(this.button8);
-            this.attackBox.Font = new System.Drawing.Font("Impact", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attackBox.Location = new System.Drawing.Point(1264, 842);
-            this.attackBox.Name = "attackBox";
-            this.attackBox.Size = new System.Drawing.Size(200, 150);
-            this.attackBox.TabIndex = 20;
-            this.attackBox.TabStop = false;
-            this.attackBox.Text = "Attack!";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(21, 38);
-            this.button5.Margin = new System.Windows.Forms.Padding(0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(61, 61);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "◄";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(122, 38);
-            this.button6.Margin = new System.Windows.Forms.Padding(0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(61, 61);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "►";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(82, 71);
-            this.button7.Margin = new System.Windows.Forms.Padding(0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(40, 49);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "▼";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(82, 23);
-            this.button8.Margin = new System.Windows.Forms.Padding(0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(40, 49);
-            this.button8.TabIndex = 3;
-            this.button8.Text = "▲";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -463,8 +315,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1642, 1074);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.attackBox);
-            this.Controls.Add(this.moveBox);
             this.Controls.Add(this.redPotionSprite);
             this.Controls.Add(this.bluePotionSprite);
             this.Controls.Add(this.bombSprite);
@@ -488,7 +338,6 @@
             this.Name = "Display";
             this.Text = "Form1";
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Display_PreviewKeyDown);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Display_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.batSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wizardSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axeSprite)).EndInit();
@@ -508,44 +357,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.bombSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bluePotionSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.redPotionSprite)).EndInit();
-            this.moveBox.ResumeLayout(false);
-            this.attackBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox batSprite;
-        private System.Windows.Forms.PictureBox wizardSprite;
-        private System.Windows.Forms.PictureBox axeSprite;
-        private System.Windows.Forms.PictureBox maceSprite;
-        private System.Windows.Forms.PictureBox quiverSprite;
-        private System.Windows.Forms.PictureBox shieldSprite;
-        private System.Windows.Forms.PictureBox swordSprite;
-        private System.Windows.Forms.PictureBox playerSprite;
-        private System.Windows.Forms.PictureBox ghoulSprite;
-        private System.Windows.Forms.PictureBox ghostSprite;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.PictureBox bowSprite;
-        private System.Windows.Forms.PictureBox bombSprite;
-        private System.Windows.Forms.PictureBox bluePotionSprite;
-        private System.Windows.Forms.PictureBox redPotionSprite;
-        private System.Windows.Forms.GroupBox moveBox;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox attackBox;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        internal System.Windows.Forms.PictureBox batSprite;
+        internal System.Windows.Forms.PictureBox wizardSprite;
+        internal System.Windows.Forms.PictureBox axeSprite;
+        internal System.Windows.Forms.PictureBox maceSprite;
+        internal System.Windows.Forms.PictureBox quiverSprite;
+        internal System.Windows.Forms.PictureBox shieldSprite;
+        internal System.Windows.Forms.PictureBox swordSprite;
+        internal System.Windows.Forms.PictureBox playerSprite;
+        internal System.Windows.Forms.PictureBox ghoulSprite;
+        internal System.Windows.Forms.PictureBox ghostSprite;
+        internal System.Windows.Forms.PictureBox pictureBox11;
+        internal System.Windows.Forms.PictureBox pictureBox12;
+        internal System.Windows.Forms.PictureBox pictureBox13;
+        internal System.Windows.Forms.PictureBox pictureBox14;
+        internal System.Windows.Forms.PictureBox pictureBox15;
+        internal System.Windows.Forms.PictureBox bowSprite;
+        internal System.Windows.Forms.PictureBox bombSprite;
+        internal System.Windows.Forms.PictureBox bluePotionSprite;
+        internal System.Windows.Forms.PictureBox redPotionSprite;
+        internal System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 

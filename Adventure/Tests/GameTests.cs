@@ -110,6 +110,29 @@ namespace Adventure
             Assert.AreEqual(display.RightBoundary, sprite.Location.X + sprite.Size.Width);
             Assert.AreEqual(display.BottomBoundary, sprite.Location.Y + sprite.Size.Height);
         }
+
+        [TestMethod]
+        public void TestCreateAndPopulateLevel()
+        {
+            Level l = new Level(1, "The Entrance");
+
+            Monster m = new Monster("Bernie", EntityType.BAT, 2, 1, new PictureBox());
+            Weapon w = new Weapon("Mum's Kitchen Knife", EquipmentType.SWORD, null, 1);
+            //Equipment f = new Equipment("Health Potion #9", EquipmentType.BLUE_POTION, null, 1);
+            Player p = new Player("Bob");
+
+            l.AddMonster(m);
+            l.AddGear(w);
+            //l.AddGear(f);
+            l.EnterPlayer(p);
+
+            Assert.AreSame(m, l.Monsters[0]);
+            Assert.AreSame(w, l.Gear[0]);
+            //Assert.IsTrue(l.HasPlayer);
+
+
+
+        }
     }
 
 }
