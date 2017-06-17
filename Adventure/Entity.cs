@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace Adventure
 {
@@ -7,24 +8,21 @@ namespace Adventure
         BAT,
         GHOST,
         GHOUL,
-        HUMAN,
+        PLAYER,
     }
 
-    internal class Entity
+    internal abstract class Entity : Element
     {
-        public readonly string Name;
         public readonly EntityType Type;
         public int Health { get; }
         public readonly int Damage;
-        public readonly PictureBox Sprite;
 
-        public Entity(string name, EntityType type, int health, int damage, PictureBox sprite)
+        public Entity(string name, EntityType type, int health, int damage, PictureBox sprite) :
+            base(name, sprite)
         {
-            this.Name = name;
             this.Type = type;
             this.Health = health;
             this.Damage = damage;
-            this.Sprite = sprite;
         }
     }
 }

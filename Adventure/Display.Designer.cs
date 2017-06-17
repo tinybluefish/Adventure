@@ -47,7 +47,15 @@
             this.bombSprite = new System.Windows.Forms.PictureBox();
             this.bluePotionSprite = new System.Windows.Forms.PictureBox();
             this.redPotionSprite = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.StatsPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.PlayerPositionTitleLabel = new System.Windows.Forms.Label();
+            this.PlayerPositionXYLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.batSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wizardSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axeSprite)).BeginInit();
@@ -67,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bombSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bluePotionSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redPotionSprite)).BeginInit();
+            this.StatsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // batSprite
@@ -259,7 +268,7 @@
             // 
             this.bombSprite.BackColor = System.Drawing.Color.Transparent;
             this.bombSprite.Image = global::Adventure.Properties.Resources.bomb;
-            this.bombSprite.Location = new System.Drawing.Point(937, 277);
+            this.bombSprite.Location = new System.Drawing.Point(1398, 612);
             this.bombSprite.Name = "bombSprite";
             this.bombSprite.Size = new System.Drawing.Size(75, 75);
             this.bombSprite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -291,20 +300,100 @@
             this.redPotionSprite.TabStop = false;
             this.redPotionSprite.Visible = false;
             // 
-            // tableLayoutPanel1
+            // StatsPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1149, 672);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(284, 100);
-            this.tableLayoutPanel1.TabIndex = 21;
+            this.StatsPanel.ColumnCount = 2;
+            this.StatsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.StatsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.StatsPanel.Controls.Add(this.PlayerPositionTitleLabel, 0, 0);
+            this.StatsPanel.Controls.Add(this.PlayerPositionXYLabel, 1, 0);
+            this.StatsPanel.Controls.Add(this.label3, 0, 1);
+            this.StatsPanel.Controls.Add(this.label4, 1, 1);
+            this.StatsPanel.Controls.Add(this.label5, 0, 2);
+            this.StatsPanel.Controls.Add(this.label6, 1, 2);
+            this.StatsPanel.Controls.Add(this.label7, 0, 3);
+            this.StatsPanel.Controls.Add(this.label8, 1, 3);
+            this.StatsPanel.Location = new System.Drawing.Point(1108, 632);
+            this.StatsPanel.Name = "StatsPanel";
+            this.StatsPanel.RowCount = 4;
+            this.StatsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.StatsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.StatsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.StatsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.StatsPanel.Size = new System.Drawing.Size(284, 100);
+            this.StatsPanel.TabIndex = 21;
+            // 
+            // PlayerPositionTitleLabel
+            // 
+            this.PlayerPositionTitleLabel.AutoSize = true;
+            this.PlayerPositionTitleLabel.Location = new System.Drawing.Point(3, 0);
+            this.PlayerPositionTitleLabel.Name = "PlayerPositionTitleLabel";
+            this.PlayerPositionTitleLabel.Size = new System.Drawing.Size(0, 20);
+            this.PlayerPositionTitleLabel.TabIndex = 0;
+            this.PlayerPositionTitleLabel.Text = "Player Position";
+            // 
+            // PlayerPositionXYLabel
+            // 
+            this.PlayerPositionXYLabel.AutoSize = true;
+            this.PlayerPositionXYLabel.Location = new System.Drawing.Point(145, 0);
+            this.PlayerPositionXYLabel.Name = "PlayerPositionXYLabel";
+            this.PlayerPositionXYLabel.Size = new System.Drawing.Size(41, 20);
+            this.PlayerPositionXYLabel.TabIndex = 1;
+            this.PlayerPositionXYLabel.Text = "TBD";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(145, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "label5";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(145, 50);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "label6";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 75);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 20);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "label7";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(145, 75);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 20);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "label8";
             // 
             // Display
             // 
@@ -313,8 +402,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = global::Adventure.Properties.Resources.dungeon600x400;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1642, 1074);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(1600, 1000);
+            this.Controls.Add(this.StatsPanel);
             this.Controls.Add(this.redPotionSprite);
             this.Controls.Add(this.bluePotionSprite);
             this.Controls.Add(this.bombSprite);
@@ -337,6 +426,7 @@
             this.KeyPreview = true;
             this.Name = "Display";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Display_Load);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Display_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.batSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wizardSprite)).EndInit();
@@ -357,6 +447,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bombSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bluePotionSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.redPotionSprite)).EndInit();
+            this.StatsPanel.ResumeLayout(false);
+            this.StatsPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -382,7 +474,15 @@
         internal System.Windows.Forms.PictureBox bombSprite;
         internal System.Windows.Forms.PictureBox bluePotionSprite;
         internal System.Windows.Forms.PictureBox redPotionSprite;
-        internal System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        internal System.Windows.Forms.TableLayoutPanel StatsPanel;
+        private System.Windows.Forms.Label PlayerPositionTitleLabel;
+        private System.Windows.Forms.Label PlayerPositionXYLabel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
 

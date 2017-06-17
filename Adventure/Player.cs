@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Adventure
 
         public Player(string name) :
             // TODO: hard code in the image file here...
-            base(name, EntityType.HUMAN, 100, 1, new PictureBox())
+            base(name, EntityType.PLAYER, 100, 1, new PictureBox())
         {
             Inventory = new List<Equipment>();
         }
@@ -27,6 +28,11 @@ namespace Adventure
         internal void DropEquipment(Equipment oldEquipment)
         {
             Inventory.Remove(oldEquipment);
+        }
+
+        public override Point MoveToStartPosition()
+        {
+            return new Point(200, 200);
         }
     }
 }

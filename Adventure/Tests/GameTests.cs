@@ -28,18 +28,17 @@ namespace Adventure
         [TestMethod]
         public void TestCreateWeapon()
         {
-            Weapon w = new Weapon("mysword", EquipmentType.SWORD, "sword.png", 10);
+            Weapon w = new Weapon("mysword", EquipmentType.SWORD, new PictureBox(), 10);
             Assert.AreEqual("mysword", w.Name);
             Assert.AreEqual(EquipmentType.SWORD, w.Type);
             Assert.AreEqual(10, w.Damage);
-            Assert.AreEqual("sword.png", w.ImageFileName);
         }
 
         [TestMethod]
         public void TestPlayerGetsWeapon()
         {
             Player p = new Adventure.Player("Ken");
-            Weapon swordOfDoom = new Weapon("Sword Of Dooooom!", EquipmentType.SWORD, "thing.png", 100);
+            Weapon swordOfDoom = new Weapon("Sword Of Dooooom!", EquipmentType.SWORD, new PictureBox(), 100);
             p.TakeEquipment(swordOfDoom);
             Assert.AreEqual(1, p.Inventory.Count);
             Assert.AreEqual(EquipmentType.SWORD, p.Inventory[0].Type);
@@ -49,7 +48,7 @@ namespace Adventure
         public void TestPlayerDropsWeapon()
         {
             Player p = new Adventure.Player("Barbie");
-            Weapon shieldOfVirtue = new Weapon("Shield Of Virtue", EquipmentType.SHIELD, "thang.png", -1);
+            Weapon shieldOfVirtue = new Weapon("Shield Of Virtue", EquipmentType.SHIELD, new PictureBox(), -1);
             p.TakeEquipment(shieldOfVirtue);
             Assert.AreEqual(1, p.Inventory.Count);
             p.DropEquipment(shieldOfVirtue);
@@ -77,7 +76,6 @@ namespace Adventure
             int startX = display.LeftBoundary + 50;
             int startY = display.TopBoundary + 50;
             sprite.Location = new System.Drawing.Point(startX, startY);
-
             
             display.MoveSprite(sprite, Direction.LEFT);
             display.MoveSprite(sprite, Direction.RIGHT);
@@ -117,21 +115,47 @@ namespace Adventure
             Level l = new Level(1, "The Entrance");
 
             Monster m = new Monster("Bernie", EntityType.BAT, 2, 1, new PictureBox());
-            Weapon w = new Weapon("Mum's Kitchen Knife", EquipmentType.SWORD, null, 1);
-            //Equipment f = new Equipment("Health Potion #9", EquipmentType.BLUE_POTION, null, 1);
+            Weapon w = new Weapon("Mum's Kitchen Knife", EquipmentType.SWORD, new PictureBox(), 1);
             Player p = new Player("Bob");
 
             l.AddMonster(m);
             l.AddGear(w);
-            //l.AddGear(f);
             l.EnterPlayer(p);
 
             Assert.AreSame(m, l.Monsters[0]);
             Assert.AreSame(w, l.Gear[0]);
-            //Assert.IsTrue(l.HasPlayer);
+            Assert.IsNotNull(l.Player);
 
+            Assert.IsTrue(m.Sprite.Visible);
+            Assert.IsTrue(p.Sprite.Visible);
+            Assert.IsTrue(w.Sprite.Visible);
+        }
 
+        [TestMethod]
+        public void TestShowAndHideSprites()
+        {
+            Level l = new Adventure.Level(2, "The Cavern");
+            Monster m = new Monster("Bernie", EntityType.BAT, 2, 1, new PictureBox());
+            Weapon w = new Weapon("Mum's Kitchen Knife", EquipmentType.SWORD, new PictureBox(), 1);
+            Player p = new Player("Bob");
+            m.Sprite.Visible = true;
+            p.Sprite.Visible = true;
+            w.Sprite.Visible = true;
+            l.AddMonster(m);
+            l.AddGear(w);
+            l.EnterPlayer(p);
 
+            l.HideElements();
+
+            Assert.IsFalse(m.Sprite.Visible);
+            Assert.IsFalse(p.Sprite.Visible);
+            Assert.IsFalse(w.Sprite.Visible);
+
+            l.ShowElements();
+
+            Assert.IsTrue(m.Sprite.Visible);
+            Assert.IsTrue(p.Sprite.Visible);
+            Assert.IsTrue(w.Sprite.Visible);
         }
     }
 

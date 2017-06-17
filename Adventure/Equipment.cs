@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace Adventure
 {
@@ -13,19 +14,19 @@ namespace Adventure
         QUIVER,
     }
 
-    abstract class Equipment
+    abstract class Equipment : Element
     {
-        public readonly string Name;
         public readonly EquipmentType Type;
-        public readonly PictureBox Sprite;
 
-        public Equipment(string name, EquipmentType type, PictureBox sprite)
+        public Equipment(string name, EquipmentType type, PictureBox sprite) :
+            base(name, sprite)
         {
-            this.Name = name;
             this.Type = type;
-            this.Sprite = sprite;
         }
 
+        public override Point MoveToStartPosition()
+        {
+            return new Point(400, 200);
+        }
     }
-
 }

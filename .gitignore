@@ -1,2 +1,2 @@
-./Adventure/bin
-./Adventure/obj
+Adventure/obj/**
+Adventure/bin/**

@@ -33,10 +33,10 @@ namespace Adventure
             // TODO: update their description tag as they progress, separte from name
             l1.EnterPlayer(new Adventure.Player("Bob the Weakling"));
 
-            display.RenderLevel(l1);
+            display.StartLevel(l1);
 
             // Fire it up...
-            Application.Run(new Display());
+            Application.Run(display);
         }
     }
 }
