@@ -25,6 +25,7 @@ namespace Adventure
             // TODO: randomly position moster in level - avoiding other objects
             // TODO: actually, need diff start points for diff monsters too....
             m.Sprite.Location = m.MoveToStartPosition();
+            m.MyLevel = this;
         }
 
         public void AddGear(Equipment e)
@@ -46,7 +47,8 @@ namespace Adventure
 
             // NOTE: player always starts near the door...
 
-            p.Sprite.Location = p.MoveToStartPosition();
+            p.MoveToStartPosition();
+            p.MyLevel = this;
         }
 
         internal void HideElements()
@@ -73,6 +75,45 @@ namespace Adventure
             {
                 e.Show();
             }
+        }
+
+        internal void MoveCreatures()
+        {
+            int tX = Player.Sprite.Location.X;
+            int tY = Player.Sprite.Location.Y;
+            Random rand = new Random();
+
+            foreach (Monster m in Monsters)
+            {
+                // Move towards it one move
+                // Naieve - doing this by checking x/y relative and then choosing one of the two
+                // appropriate directions at random and moving one tick towards.
+                int sX = m.Sprite.Location.X;
+                int sY = m.Sprite.Location.Y;
+                if (rand.NextDouble() > 0.5)
+                {
+                    if (sX <= tX)
+                        m.MoveSprite(Direction.RIGHT);
+                    else
+                        m.MoveSprite(Direction.LEFT);
+                }
+                else
+                {
+                    if (sY <= tY)
+                        m.MoveSprite(Direction.DOWN);
+                    else
+                        m.MoveSprite(Direction.UP);
+                }
+            }
+        }
+
+        internal List<Element> Elements()
+        {
+            List<Element> all = new List<Element>();
+            all.AddRange(Monsters);
+            all.Add(Player);
+            all.AddRange(Gear);
+            return all;
         }
     }
 }

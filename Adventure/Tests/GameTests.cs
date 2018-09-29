@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Adventure;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace Adventure
 {
@@ -21,7 +22,7 @@ namespace Adventure
         public void TestCreatePlayer()
         {
             String playerName = "Bill";
-            Player p = new Player(playerName);
+            Player p = new Player(playerName, null, null);
             Assert.AreEqual(playerName, p.Name);
         }
 
@@ -37,7 +38,7 @@ namespace Adventure
         [TestMethod]
         public void TestPlayerGetsWeapon()
         {
-            Player p = new Adventure.Player("Ken");
+            Player p = new Adventure.Player("Ken", new PictureBox(), new List<PictureBox>(1));
             Weapon swordOfDoom = new Weapon("Sword Of Dooooom!", EquipmentType.SWORD, new PictureBox(), 100);
             p.TakeEquipment(swordOfDoom);
             Assert.AreEqual(1, p.Inventory.Count);
@@ -47,7 +48,7 @@ namespace Adventure
         [TestMethod]
         public void TestPlayerDropsWeapon()
         {
-            Player p = new Adventure.Player("Barbie");
+            Player p = new Adventure.Player("Barbie", new PictureBox(), new List<PictureBox>(1));
             Weapon shieldOfVirtue = new Weapon("Shield Of Virtue", EquipmentType.SHIELD, new PictureBox(), -1);
             p.TakeEquipment(shieldOfVirtue);
             Assert.AreEqual(1, p.Inventory.Count);
@@ -58,34 +59,34 @@ namespace Adventure
         [TestMethod]
         public void TestCreateMonster()
         {
-            Monster m = new Monster("Bernard", EntityType.BAT, 4, 1, new PictureBox());
+            Monster m = new Monster("Bernard", EntityType.Bat, 4, 1, new PictureBox());
             Assert.AreEqual("Bernard", m.Name);
-            Assert.AreEqual(EntityType.BAT, m.Type);
+            Assert.AreEqual(EntityType.Bat, m.Type);
             Assert.AreEqual(4, m.Health);
             Assert.AreEqual(1, m.Damage);
         }
 
         [TestMethod]
-        public void TestMoveSprite()
+        public void TestMovePlayer()
         {
             // Move left, right, right, down, down, up -> net should be +10, -10
-            // NB: no boundary checks
-
-            PictureBox sprite = new PictureBox();
             Display display = new Adventure.Display();
-            int startX = display.LeftBoundary + 50;
-            int startY = display.TopBoundary + 50;
-            sprite.Location = new System.Drawing.Point(startX, startY);
-            
-            display.MoveSprite(sprite, Direction.LEFT);
-            display.MoveSprite(sprite, Direction.RIGHT);
-            display.MoveSprite(sprite, Direction.RIGHT);
-            display.MoveSprite(sprite, Direction.UP);
-            display.MoveSprite(sprite, Direction.UP);
-            display.MoveSprite(sprite, Direction.DOWN);
+            Level l = new Level(1, "The Entrance");
+            int startX = Display.LeftBoundary + 50;
+            int startY = Display.TopBoundary + 50;
+            Player p = new Player("Nigel", new PictureBox(), new List<PictureBox>(1));
+            l.EnterPlayer(p);
+            p.Sprite.Location = new System.Drawing.Point(startX, startY);
 
-            Assert.AreEqual(startX + 10, sprite.Location.X);
-            Assert.AreEqual(startY - 10, sprite.Location.Y);
+            p.MoveSprite(Direction.LEFT);
+            p.MoveSprite(Direction.RIGHT);
+            p.MoveSprite(Direction.RIGHT);
+            p.MoveSprite(Direction.UP);
+            p.MoveSprite(Direction.UP);
+            p.MoveSprite(Direction.DOWN);
+
+            Assert.AreEqual(startX + 10, p.Sprite.Location.X);
+            Assert.AreEqual(startY - 10, p.Sprite.Location.Y);
 
         }
 
@@ -95,18 +96,21 @@ namespace Adventure
         [TestMethod]
         public void TestMoveSpriteBoundaries()
         {
-            PictureBox sprite = new PictureBox();
+            Player p = new Player("Nigel", new PictureBox(), new List<PictureBox>(1));
+            Level l = new Level(1, "The Entrance");
+            l.EnterPlayer(p);
+            PictureBox sprite = p.Sprite;
             Display display = new Adventure.Display();
-            sprite.Location = new Point(display.LeftBoundary, display.TopBoundary);
-            display.MoveSprite(sprite, Direction.LEFT);
-            display.MoveSprite(sprite, Direction.UP);
-            Assert.AreEqual(display.LeftBoundary, sprite.Location.X);
-            Assert.AreEqual(display.TopBoundary, sprite.Location.Y);
-            sprite.Location = new Point(display.RightBoundary, display.BottomBoundary);
-            display.MoveSprite(sprite, Direction.RIGHT);
-            display.MoveSprite(sprite, Direction.DOWN);
-            Assert.AreEqual(display.RightBoundary, sprite.Location.X + sprite.Size.Width);
-            Assert.AreEqual(display.BottomBoundary, sprite.Location.Y + sprite.Size.Height);
+            sprite.Location = new Point(Display.LeftBoundary, Display.TopBoundary);
+            p.MoveSprite(Direction.LEFT);
+            p.MoveSprite(Direction.UP);
+            Assert.AreEqual(Display.LeftBoundary, sprite.Location.X);
+            Assert.AreEqual(Display.TopBoundary, sprite.Location.Y);
+            sprite.Location = new Point(Display.RightBoundary, Display.BottomBoundary);
+            p.MoveSprite(Direction.RIGHT);
+            p.MoveSprite(Direction.DOWN);
+            Assert.AreEqual(Display.RightBoundary, sprite.Location.X + sprite.Size.Width);
+            Assert.AreEqual(Display.BottomBoundary, sprite.Location.Y + sprite.Size.Height);
         }
 
         [TestMethod]
@@ -114,9 +118,9 @@ namespace Adventure
         {
             Level l = new Level(1, "The Entrance");
 
-            Monster m = new Monster("Bernie", EntityType.BAT, 2, 1, new PictureBox());
+            Monster m = new Monster("Bernie", EntityType.Bat, 2, 1, new PictureBox());
             Weapon w = new Weapon("Mum's Kitchen Knife", EquipmentType.SWORD, new PictureBox(), 1);
-            Player p = new Player("Bob");
+            Player p = new Player("Bob", new PictureBox(), new List<PictureBox>(1));
 
             l.AddMonster(m);
             l.AddGear(w);
@@ -135,9 +139,9 @@ namespace Adventure
         public void TestShowAndHideSprites()
         {
             Level l = new Adventure.Level(2, "The Cavern");
-            Monster m = new Monster("Bernie", EntityType.BAT, 2, 1, new PictureBox());
+            Monster m = new Monster("Bernie", EntityType.Bat, 2, 1, new PictureBox());
             Weapon w = new Weapon("Mum's Kitchen Knife", EquipmentType.SWORD, new PictureBox(), 1);
-            Player p = new Player("Bob");
+            Player p = new Player("Bob", new PictureBox(), new List<PictureBox>(1));
             m.Sprite.Visible = true;
             p.Sprite.Visible = true;
             w.Sprite.Visible = true;
@@ -156,6 +160,38 @@ namespace Adventure
             Assert.IsTrue(m.Sprite.Visible);
             Assert.IsTrue(p.Sprite.Visible);
             Assert.IsTrue(w.Sprite.Visible);
+        }
+
+        [TestMethod]
+        public void TestInteractions()
+        {
+            Level l = new Adventure.Level(2, "The Cavern");
+            Monster m = new Monster("Bernie", EntityType.Bat, 2, 1, new PictureBox());
+            Player p = new Player("Bob", new PictureBox(), new List<PictureBox>(1));
+            l.AddMonster(m);
+            l.EnterPlayer(p);
+            l.ShowElements();
+
+            int startX = 300, startY = 300;
+
+            // Place them next to each other
+            p.Sprite.Location = new Point(startX, startY);
+            // Position the monster just to the right of the player with a gap of MOVEMENT
+            m.Sprite.Location = new Point(startX + p.Sprite.Width + Display.MOVEMENT, 300);
+            int pw = p.Sprite.Width;            
+
+            // Test 1: Move the monster towards the player and ensure it stops when it makes contact
+            // First move gets them adjacent
+            m.MoveSprite(Direction.LEFT);
+            Assert.AreEqual(startX + pw, m.Sprite.Location.X); // Just to be sure
+            // assert no interaction...
+             
+            m.MoveSprite(Direction.LEFT);
+            Assert.AreEqual(startX + pw, m.Sprite.Location.X); // Should still be same
+            // SHould also return attack/hit/whatever
+
+            // Test 2: reposition monster above player, move down.
+            
         }
     }
 

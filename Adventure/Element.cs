@@ -6,7 +6,7 @@ namespace Adventure
     internal abstract class Element
     {
         public readonly string Name;
-        public readonly PictureBox Sprite;
+        public PictureBox Sprite;
 
         public Element(string name, PictureBox sprite)
         {

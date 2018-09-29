@@ -13,7 +13,15 @@ namespace Adventure
 
         public override Point MoveToStartPosition()
         {
-            return new Point(600, 200);
+            Random r = new Random();
+            int x = (int)(r.NextDouble() * 1000) % Display.RightBoundary;
+            int y = (int)(r.NextDouble() * 1000) % Display.BottomBoundary;
+
+            Point p = new Point(x, y);
+            this.Sprite.Location = p;
+            return p;
         }
+
+
     }
 }

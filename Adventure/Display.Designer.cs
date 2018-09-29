@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.batSprite = new System.Windows.Forms.PictureBox();
             this.wizardSprite = new System.Windows.Forms.PictureBox();
             this.axeSprite = new System.Windows.Forms.PictureBox();
@@ -38,11 +39,11 @@
             this.playerSprite = new System.Windows.Forms.PictureBox();
             this.ghoulSprite = new System.Windows.Forms.PictureBox();
             this.ghostSprite = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.invBox4 = new System.Windows.Forms.PictureBox();
+            this.invBox5 = new System.Windows.Forms.PictureBox();
+            this.invBox3 = new System.Windows.Forms.PictureBox();
+            this.invBox2 = new System.Windows.Forms.PictureBox();
+            this.invBox1 = new System.Windows.Forms.PictureBox();
             this.bowSprite = new System.Windows.Forms.PictureBox();
             this.bombSprite = new System.Windows.Forms.PictureBox();
             this.bluePotionSprite = new System.Windows.Forms.PictureBox();
@@ -50,12 +51,17 @@
             this.StatsPanel = new System.Windows.Forms.TableLayoutPanel();
             this.PlayerPositionTitleLabel = new System.Windows.Forms.Label();
             this.PlayerPositionXYLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.PlayerHealthTitleLabel = new System.Windows.Forms.Label();
+            this.PlayerHealthLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.MoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.logBox = new System.Windows.Forms.ListBox();
+            this.endGameLabel = new System.Windows.Forms.Label();
+            this.playAgainButton = new System.Windows.Forms.Button();
+            this.quitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.batSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wizardSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axeSprite)).BeginInit();
@@ -66,11 +72,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.playerSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghoulSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghostSprite)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bowSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bombSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bluePotionSprite)).BeginInit();
@@ -197,60 +203,60 @@
             this.ghostSprite.TabStop = false;
             this.ghostSprite.Visible = false;
             // 
-            // pictureBox11
+            // invBox4
             // 
-            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.Location = new System.Drawing.Point(676, 842);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 10;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.Visible = false;
+            this.invBox4.BackColor = System.Drawing.Color.Transparent;
+            this.invBox4.Location = new System.Drawing.Point(669, 785);
+            this.invBox4.Name = "invBox4";
+            this.invBox4.Size = new System.Drawing.Size(150, 150);
+            this.invBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.invBox4.TabIndex = 10;
+            this.invBox4.TabStop = false;
+            this.invBox4.Visible = false;
             // 
-            // pictureBox12
+            // invBox5
             // 
-            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.Location = new System.Drawing.Point(832, 842);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox12.TabIndex = 11;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.Visible = false;
+            this.invBox5.BackColor = System.Drawing.Color.Transparent;
+            this.invBox5.Location = new System.Drawing.Point(825, 785);
+            this.invBox5.Name = "invBox5";
+            this.invBox5.Size = new System.Drawing.Size(150, 150);
+            this.invBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.invBox5.TabIndex = 11;
+            this.invBox5.TabStop = false;
+            this.invBox5.Visible = false;
             // 
-            // pictureBox13
+            // invBox3
             // 
-            this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox13.Location = new System.Drawing.Point(520, 842);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 12;
-            this.pictureBox13.TabStop = false;
-            this.pictureBox13.Visible = false;
+            this.invBox3.BackColor = System.Drawing.Color.Transparent;
+            this.invBox3.Location = new System.Drawing.Point(513, 785);
+            this.invBox3.Name = "invBox3";
+            this.invBox3.Size = new System.Drawing.Size(150, 150);
+            this.invBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.invBox3.TabIndex = 12;
+            this.invBox3.TabStop = false;
+            this.invBox3.Visible = false;
             // 
-            // pictureBox14
+            // invBox2
             // 
-            this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox14.Location = new System.Drawing.Point(364, 842);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 13;
-            this.pictureBox14.TabStop = false;
-            this.pictureBox14.Visible = false;
+            this.invBox2.BackColor = System.Drawing.Color.Transparent;
+            this.invBox2.Location = new System.Drawing.Point(357, 785);
+            this.invBox2.Name = "invBox2";
+            this.invBox2.Size = new System.Drawing.Size(150, 150);
+            this.invBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.invBox2.TabIndex = 13;
+            this.invBox2.TabStop = false;
+            this.invBox2.Visible = false;
             // 
-            // pictureBox15
+            // invBox1
             // 
-            this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox15.Location = new System.Drawing.Point(208, 842);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox15.TabIndex = 14;
-            this.pictureBox15.TabStop = false;
-            this.pictureBox15.Visible = false;
+            this.invBox1.BackColor = System.Drawing.Color.Transparent;
+            this.invBox1.Location = new System.Drawing.Point(201, 785);
+            this.invBox1.Name = "invBox1";
+            this.invBox1.Size = new System.Drawing.Size(150, 150);
+            this.invBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.invBox1.TabIndex = 14;
+            this.invBox1.TabStop = false;
+            this.invBox1.Visible = false;
             // 
             // bowSprite
             // 
@@ -307,8 +313,8 @@
             this.StatsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.StatsPanel.Controls.Add(this.PlayerPositionTitleLabel, 0, 0);
             this.StatsPanel.Controls.Add(this.PlayerPositionXYLabel, 1, 0);
-            this.StatsPanel.Controls.Add(this.label3, 0, 1);
-            this.StatsPanel.Controls.Add(this.label4, 1, 1);
+            this.StatsPanel.Controls.Add(this.PlayerHealthTitleLabel, 0, 1);
+            this.StatsPanel.Controls.Add(this.PlayerHealthLabel, 1, 1);
             this.StatsPanel.Controls.Add(this.label5, 0, 2);
             this.StatsPanel.Controls.Add(this.label6, 1, 2);
             this.StatsPanel.Controls.Add(this.label7, 0, 3);
@@ -328,7 +334,7 @@
             this.PlayerPositionTitleLabel.AutoSize = true;
             this.PlayerPositionTitleLabel.Location = new System.Drawing.Point(3, 0);
             this.PlayerPositionTitleLabel.Name = "PlayerPositionTitleLabel";
-            this.PlayerPositionTitleLabel.Size = new System.Drawing.Size(0, 20);
+            this.PlayerPositionTitleLabel.Size = new System.Drawing.Size(112, 20);
             this.PlayerPositionTitleLabel.TabIndex = 0;
             this.PlayerPositionTitleLabel.Text = "Player Position";
             // 
@@ -341,23 +347,23 @@
             this.PlayerPositionXYLabel.TabIndex = 1;
             this.PlayerPositionXYLabel.Text = "TBD";
             // 
-            // label3
+            // PlayerHealthTitleLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.PlayerHealthTitleLabel.AutoSize = true;
+            this.PlayerHealthTitleLabel.Location = new System.Drawing.Point(3, 25);
+            this.PlayerHealthTitleLabel.Name = "PlayerHealthTitleLabel";
+            this.PlayerHealthTitleLabel.Size = new System.Drawing.Size(103, 20);
+            this.PlayerHealthTitleLabel.TabIndex = 2;
+            this.PlayerHealthTitleLabel.Text = "Player Health";
             // 
-            // label4
+            // PlayerHealthLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(145, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
+            this.PlayerHealthLabel.AutoSize = true;
+            this.PlayerHealthLabel.Location = new System.Drawing.Point(145, 25);
+            this.PlayerHealthLabel.Name = "PlayerHealthLabel";
+            this.PlayerHealthLabel.Size = new System.Drawing.Size(51, 20);
+            this.PlayerHealthLabel.TabIndex = 3;
+            this.PlayerHealthLabel.Text = "label4";
             // 
             // label5
             // 
@@ -395,6 +401,57 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "label8";
             // 
+            // MoveTimer
+            // 
+            this.MoveTimer.Enabled = true;
+            this.MoveTimer.Interval = 500;
+            this.MoveTimer.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // logBox
+            // 
+            this.logBox.Enabled = false;
+            this.logBox.FormattingEnabled = true;
+            this.logBox.ItemHeight = 20;
+            this.logBox.Location = new System.Drawing.Point(825, 777);
+            this.logBox.Name = "logBox";
+            this.logBox.Size = new System.Drawing.Size(567, 164);
+            this.logBox.TabIndex = 23;
+            // 
+            // endGameLabel
+            // 
+            this.endGameLabel.AutoSize = true;
+            this.endGameLabel.Font = new System.Drawing.Font("Impact", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endGameLabel.ForeColor = System.Drawing.Color.LawnGreen;
+            this.endGameLabel.Location = new System.Drawing.Point(459, 287);
+            this.endGameLabel.Name = "endGameLabel";
+            this.endGameLabel.Size = new System.Drawing.Size(694, 176);
+            this.endGameLabel.TabIndex = 24;
+            this.endGameLabel.Text = "You Won!!!";
+            this.endGameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.endGameLabel.Visible = false;
+            // 
+            // playAgainButton
+            // 
+            this.playAgainButton.Location = new System.Drawing.Point(626, 496);
+            this.playAgainButton.Name = "playAgainButton";
+            this.playAgainButton.Size = new System.Drawing.Size(121, 40);
+            this.playAgainButton.TabIndex = 25;
+            this.playAgainButton.Text = "Play Again!";
+            this.playAgainButton.UseVisualStyleBackColor = true;
+            this.playAgainButton.Visible = false;
+            this.playAgainButton.Click += new System.EventHandler(this.playAgainButton_Click);
+            // 
+            // quitButton
+            // 
+            this.quitButton.Location = new System.Drawing.Point(790, 496);
+            this.quitButton.Name = "quitButton";
+            this.quitButton.Size = new System.Drawing.Size(121, 40);
+            this.quitButton.TabIndex = 26;
+            this.quitButton.Text = "Quit";
+            this.quitButton.UseVisualStyleBackColor = true;
+            this.quitButton.Visible = false;
+            this.quitButton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Display
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -403,16 +460,20 @@
             this.BackgroundImage = global::Adventure.Properties.Resources.dungeon600x400;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1600, 1000);
+            this.Controls.Add(this.quitButton);
+            this.Controls.Add(this.playAgainButton);
+            this.Controls.Add(this.endGameLabel);
+            this.Controls.Add(this.logBox);
             this.Controls.Add(this.StatsPanel);
             this.Controls.Add(this.redPotionSprite);
             this.Controls.Add(this.bluePotionSprite);
             this.Controls.Add(this.bombSprite);
             this.Controls.Add(this.bowSprite);
-            this.Controls.Add(this.pictureBox15);
-            this.Controls.Add(this.pictureBox14);
-            this.Controls.Add(this.pictureBox13);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.invBox1);
+            this.Controls.Add(this.invBox2);
+            this.Controls.Add(this.invBox3);
+            this.Controls.Add(this.invBox5);
+            this.Controls.Add(this.invBox4);
             this.Controls.Add(this.ghostSprite);
             this.Controls.Add(this.ghoulSprite);
             this.Controls.Add(this.playerSprite);
@@ -426,7 +487,6 @@
             this.KeyPreview = true;
             this.Name = "Display";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Display_Load);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Display_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.batSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wizardSprite)).EndInit();
@@ -438,11 +498,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.playerSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghoulSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghostSprite)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bowSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bombSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bluePotionSprite)).EndInit();
@@ -450,6 +510,7 @@
             this.StatsPanel.ResumeLayout(false);
             this.StatsPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -465,11 +526,11 @@
         internal System.Windows.Forms.PictureBox playerSprite;
         internal System.Windows.Forms.PictureBox ghoulSprite;
         internal System.Windows.Forms.PictureBox ghostSprite;
-        internal System.Windows.Forms.PictureBox pictureBox11;
-        internal System.Windows.Forms.PictureBox pictureBox12;
-        internal System.Windows.Forms.PictureBox pictureBox13;
-        internal System.Windows.Forms.PictureBox pictureBox14;
-        internal System.Windows.Forms.PictureBox pictureBox15;
+        internal System.Windows.Forms.PictureBox invBox4;
+        internal System.Windows.Forms.PictureBox invBox5;
+        internal System.Windows.Forms.PictureBox invBox3;
+        internal System.Windows.Forms.PictureBox invBox2;
+        internal System.Windows.Forms.PictureBox invBox1;
         internal System.Windows.Forms.PictureBox bowSprite;
         internal System.Windows.Forms.PictureBox bombSprite;
         internal System.Windows.Forms.PictureBox bluePotionSprite;
@@ -477,12 +538,17 @@
         internal System.Windows.Forms.TableLayoutPanel StatsPanel;
         private System.Windows.Forms.Label PlayerPositionTitleLabel;
         private System.Windows.Forms.Label PlayerPositionXYLabel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label PlayerHealthTitleLabel;
+        private System.Windows.Forms.Label PlayerHealthLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Timer MoveTimer;
+        private System.Windows.Forms.ListBox logBox;
+        private System.Windows.Forms.Label endGameLabel;
+        private System.Windows.Forms.Button playAgainButton;
+        private System.Windows.Forms.Button quitButton;
     }
 }
 
